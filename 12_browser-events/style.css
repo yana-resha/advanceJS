@@ -1,0 +1,15 @@
+.btn-scroll {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+}
+
+form input {
+  margin-right: 10px;
+}
+
+
+.fio {
+  background-color: rgba(244, 244, 244, 0.879);
+  padding: 10px;
+}

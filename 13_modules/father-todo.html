@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script type="module">
+  import {createTodoApp} from './todo-app/view.js';
+
+  import {
+    getTodoList,
+    createTodoItem,
+    switchTodoItemDone,
+    deleteTodoItem
+  } from './todo-app/api.js'
+
+
+  import {
+    getTodoListLocal,
+    createTodoItemLocal,
+    switchTodoItemDoneLocal,
+    deleteTodoItemLocal
+  } from './todo-app/localStorage.js'
+
+  const owner = 'Папа';
+  const containerId = "todo-app-3";
+  const title = 'Дела папы';
+  (() => {
+    const todoItemListMother = getTodoListLocal (owner);
+    createTodoApp(document.getElementById(id), {
+      title,
+      owner,
+      todoItemListMother,
+      onCreteFormSubmit: createTodoItemLocal,
+      onDoneClick: switchTodoItemDoneLocal,
+      onDeleteClick: deleteTodoItemLocal,
+    })
+  })()
+
+   </script>
+  <title>TODO</title>
+</head>
+<body>
+  <div class="container mb-5">
+    <nav class="nav">
+      <a class="nav-link" href="index.html">мои дела</a>
+      <a class="nav-link" href="mother-todo.html">дела мамы</a>
+      <a class="nav-link" href="father-todo.html">дела папы</a>
+    </nav>
+    <button class="btn btn-primary" style="margin-left: 0.5rem;"></button>
+  </div>
+  <div id="todo-app-3" class="container"></div>
+</body>
+</html>

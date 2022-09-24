@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script type="module">
+    import {BaseComponent, showErrorState, showLoader, AddToCartComponent} from './index.js';
+
+
+
+    const container = 'list-cards';
+
+    // const customization = new BaseComponent(container, showLoader(), showErrorState())
+    // const customization2 = new BaseComponent("container-2");
+    // console.log(customization)
+
+    for (let i = 0; i < 20; ++i) {
+      const fetchId = Math.round(Math.random()* 350);
+      const customization = new AddToCartComponent(container, showLoader(), showErrorState(), fetchId).createBusket();
+    }
+
+
+
+    // console.log(customization)
+
+
+  </script>
+  <title>Классы</title>
+
+</head>
+<body>
+  <div id="container" class="container py-4">
+    <div class="d-flex flex-row flex-wrap justify-content-between " id="list-cards"></div>
+  </div>
+
+</body>
+</html>

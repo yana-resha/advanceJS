@@ -1,0 +1,25 @@
+{
+  "name": "validation",
+  "description": "Validation Cards",
+  "private": true,
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
+    "lint": "eslint ./",
+    "lint:report": "eslint ./"
+  },
+  "author": "Yana",
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-formatter-gitlab": "^2.1.0",
+    "eslint-plugin-import": "^2.22.1"
+  },
+  "dependencies": {
+    "card-info": "^1.2.4",
+    "inputmask": "^5.0.7",
+    "parcel": "^2.6.1",
+    "payment": "^2.4.6",
+    "redom": "^3.29.0"
+  }
+}
